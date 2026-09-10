@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# APK builds — dropped locally, not committed (see public/downloads/README.md)
+public/downloads/*.apk
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

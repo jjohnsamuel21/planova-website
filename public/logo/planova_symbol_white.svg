@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Planova symbol (white)">
+  <!-- White-on-transparent variant for dark backgrounds -->
+  <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="16"/>
+  <path d="M184 100a84 84 0 0 1-8 35" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,0.04)"/>
+  <g transform="translate(100,100)" fill="#FFFFFF">
+    <ellipse rx="18" ry="26" transform="rotate(0) translate(0,-30)" />
+    <ellipse rx="18" ry="26" transform="rotate(72) translate(0,-30)" />
+    <ellipse rx="18" ry="26" transform="rotate(144) translate(0,-30)" />
+    <ellipse rx="18" ry="26" transform="rotate(216) translate(0,-30)" />
+    <ellipse rx="18" ry="26" transform="rotate(288) translate(0,-30)" />
+    <circle r="10" fill="#0C1220" />
+  </g>
+</svg>

@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Planova Website
 
-## Getting Started
+Marketing site for **Planova** — a collaborative family routine tracker
+(Flutter + Firebase, Android). Single-page site: hero, features, use cases,
+how-it-works, and a direct APK download.
 
-First, run the development server:
+Built with Next.js (App Router) + TypeScript + Tailwind CSS v4.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## APK download
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The download button links to `public/downloads/planova.apk`. Drop the
+release APK there (see `public/downloads/README.md`) — file must be named
+`planova.apk`, or update `APK_PATH` in `src/lib/content/download.ts`.
 
-## Learn More
+## Theming
 
-To learn more about Next.js, take a look at the following resources:
+The site mirrors the app's two palettes — **Thread** (light) and **Dial**
+(dark) — as CSS custom properties in `src/app/globals.css`, toggled via a
+`dial` class on `<html>` (see `src/components/theme/ThemeProvider.tsx`).
+Defaults to Thread; choice persists in `localStorage`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/            layout, page, global styles
+src/components/
+  layout/            Nav, Footer
+  theme/             ThemeProvider, ThemeToggle
+  sections/          Hero, Features, UseCases, HowItWorks
+  ui/                FeatureCard, UseCaseCard, DownloadButton, HeroMockup, Badge
+src/lib/
+  theme/tokens.ts    JS-side mirror of the CSS design tokens
+  content/           copy/data for features, use cases, steps, download path
+public/logo/         brand assets copied from the app repo
+public/downloads/    drop the release APK here
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — dev server
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `npx tsc --noEmit` — type check

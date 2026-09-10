@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" role="img" aria-label="Planova stacked lockup">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8F7BD6"/>
+      <stop offset="1" stop-color="#7A6AB0"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(100,74)">
+    <circle cx="0" cy="0" r="46" fill="#FFFFFF" stroke="#EFEAFC" stroke-width="10" />
+    <path d="M46 0a46 46 0 0 1-4 20" fill="none" stroke="#7A6AB0" stroke-width="10" stroke-linecap="round"/>
+    <g transform="translate(0,0)">
+      <g fill="url(#g1)">
+        <ellipse rx="12" ry="18" transform="rotate(0) translate(0,-24)" />
+        <ellipse rx="12" ry="18" transform="rotate(72) translate(0,-24)" />
+        <ellipse rx="12" ry="18" transform="rotate(144) translate(0,-24)" />
+        <ellipse rx="12" ry="18" transform="rotate(216) translate(0,-24)" />
+        <ellipse rx="12" ry="18" transform="rotate(288) translate(0,-24)" />
+      </g>
+      <circle r="7" fill="#FFFFFF" />
+    </g>
+  </g>
+  <g transform="translate(100,170)">
+    <text x="0" y="0" text-anchor="middle" font-family="Nunito, system-ui, -apple-system, 'Segoe UI', Roboto" font-weight="800" font-size="28" fill="#2B2740">PLANOVA</text>
+  </g>
+</svg>

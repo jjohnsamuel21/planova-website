@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120" role="img" aria-label="Planova horizontal lockup">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8F7BD6"/>
+      <stop offset="1" stop-color="#7A6AB0"/>
+    </linearGradient>
+  </defs>
+  <!-- symbol (reuse simplified shapes) -->
+  <g transform="translate(40,60)">
+    <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#EFEAFC" stroke-width="8" />
+    <path d="M34 0a34 34 0 0 1-3 15" fill="none" stroke="#7A6AB0" stroke-width="8" stroke-linecap="round" transform="translate(0,0)"/>
+    <g transform="translate(0,0)">
+      <g fill="url(#g1)">
+        <ellipse rx="8" ry="12" transform="rotate(0) translate(0,-18)" />
+        <ellipse rx="8" ry="12" transform="rotate(72) translate(0,-18)" />
+        <ellipse rx="8" ry="12" transform="rotate(144) translate(0,-18)" />
+        <ellipse rx="8" ry="12" transform="rotate(216) translate(0,-18)" />
+        <ellipse rx="8" ry="12" transform="rotate(288) translate(0,-18)" />
+      </g>
+      <circle r="5" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <g transform="translate(96,70)">
+    <text x="0" y="0" font-family="Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="800" font-size="36" fill="#2B2740">PLANOVA</text>
+  </g>
+</svg>

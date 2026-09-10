@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Planova symbol (color)">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8F7BD6"/>
+      <stop offset="1" stop-color="#7A6AB0"/>
+    </linearGradient>
+  </defs>
+  <!-- outer ring track -->
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#EFEAFC" stroke-width="16"/>
+  <!-- progress arc (accent) -->
+  <path d="M184 100a84 84 0 0 1-8 35" fill="none" stroke="#7A6AB0" stroke-width="16" stroke-linecap="round"/>
+  <!-- subtle inner ring to suggest donut -->
+  <circle cx="100" cy="100" r="60" fill="#FFFFFF"/>
+
+  <!-- stylized 5-petal flower in center -->
+  <g transform="translate(100,100)">
+    <g fill="url(#g1)">
+      <ellipse rx="18" ry="26" transform="rotate(0) translate(0,-30)" />
+      <ellipse rx="18" ry="26" transform="rotate(72) translate(0,-30)" />
+      <ellipse rx="18" ry="26" transform="rotate(144) translate(0,-30)" />
+      <ellipse rx="18" ry="26" transform="rotate(216) translate(0,-30)" />
+      <ellipse rx="18" ry="26" transform="rotate(288) translate(0,-30)" />
+    </g>
+    <!-- center dot -->
+    <circle r="10" fill="#FFFFFF" />
+  </g>
+</svg>
