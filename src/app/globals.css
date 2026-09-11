@@ -44,6 +44,19 @@
   --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
+:root {
+  --color-void: #0a0e1a;
+  --color-void-elevated: #10162a;
+  --color-void-border: #1e2740;
+  --color-glow-amber: #e8a33d;
+  --color-glow-amber-soft: rgba(232, 163, 61, 0.35);
+  --color-glow-purple: #7a6ab0;
+  --color-glow-purple-soft: rgba(122, 106, 176, 0.35);
+  --color-ink-hud: #e9edf7;
+  --color-sub-hud: #8792a6;
+  --color-faint-hud: #4b5670;
+}
+
 @theme inline {
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
@@ -71,6 +84,17 @@
   --color-category-teal: #3fa6a6;
   --color-category-pink: #c48fd6;
 
+  --color-void: var(--color-void);
+  --color-void-elevated: var(--color-void-elevated);
+  --color-void-border: var(--color-void-border);
+  --color-glow-amber: var(--color-glow-amber);
+  --color-glow-amber-soft: var(--color-glow-amber-soft);
+  --color-glow-purple: var(--color-glow-purple);
+  --color-glow-purple-soft: var(--color-glow-purple-soft);
+  --color-ink-hud: var(--color-ink-hud);
+  --color-sub-hud: var(--color-sub-hud);
+  --color-faint-hud: var(--color-faint-hud);
+
   --shadow-card: var(--shadow-card);
 
   --radius-chip: 10px;
@@ -84,6 +108,6 @@
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-ink);
+  background: var(--color-void);
+  color: var(--color-ink-hud);
 }
