@@ -1,9 +1,6 @@
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/sections/Hero";
-import { Features } from "@/components/sections/Features";
-import { UseCases } from "@/components/sections/UseCases";
-import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Hero } from "@/components/chapters/Hero";
 
 export default function Home() {
   return (
@@ -11,9 +8,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Features />
-        <UseCases />
-        <HowItWorks />
       </main>
       <Footer />
     </>

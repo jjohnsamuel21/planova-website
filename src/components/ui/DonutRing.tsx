@@ -55,24 +55,29 @@ export function DonutRing({
           strokeWidth={strokeWidth}
           opacity={0.35}
         />
-        {arcs.map((arc, index) => (
-          <motion.circle
-            key={arc.label}
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            stroke={arc.color}
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-            transform={`rotate(-90 ${size / 2} ${size / 2})`}
-            style={{ pathOffset: arc.offset }}
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: arc.fraction }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: index * 0.15, ease: "easeOut" }}
-          />
-        ))}
+        {arcs.map((arc, index) => {
+          const circumference = 2 * Math.PI * radius;
+          const arcLength = arc.fraction * circumference;
+          const startOffset = arc.offset * circumference;
+          return (
+            <motion.circle
+              key={arc.label}
+              cx={size / 2}
+              cy={size / 2}
+              r={radius}
+              fill="none"
+              stroke={arc.color}
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+              transform={`rotate(-90 ${size / 2} ${size / 2})`}
+              strokeDasharray={`${arcLength} ${circumference - arcLength}`}
+              initial={{ strokeDashoffset: -startOffset + arcLength }}
+              whileInView={{ strokeDashoffset: -startOffset }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.15, ease: "easeOut" }}
+            />
+          );
+        })}
       </svg>
       {(centerValue || centerLabel) && (
         <div className="col-start-1 row-start-1 flex flex-col items-center">
