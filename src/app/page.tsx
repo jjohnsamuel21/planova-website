@@ -6,6 +6,7 @@ import { ThreadDial } from "@/components/chapters/ThreadDial";
 import { Dashboard } from "@/components/chapters/Dashboard";
 import { Logs } from "@/components/chapters/Logs";
 import { Reminders } from "@/components/chapters/Reminders";
+import { Family } from "@/components/chapters/Family";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Dashboard />
         <Logs />
         <Reminders />
+        <Family />
       </main>
       <Footer />
     </>
