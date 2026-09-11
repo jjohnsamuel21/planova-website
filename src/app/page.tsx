@@ -2,6 +2,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/chapters/Hero";
 import { Plans } from "@/components/chapters/Plans";
+import { ThreadDial } from "@/components/chapters/ThreadDial";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <Plans />
+        <ThreadDial />
       </main>
       <Footer />
     </>
