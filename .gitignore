@@ -42,3 +42,6 @@ public/downloads/*.apk
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# subagent-driven-development scratch workspace
+/.superpowers/
