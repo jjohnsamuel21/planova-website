@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nunito, JetBrains_Mono } from "next/font/google";
-import { ThemeProvider, noFoucScript } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -18,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Planova — Family routines, tracked together.",
+  title: "Planova — Family routines, engineered.",
   description:
-    "Planova is a collaborative family routine tracker: create plans, log daily tasks together, and see everyone's progress in one place.",
+    "Planova is a collaborative family routine tracker: create plans, log daily tasks together, and see everyone's progress on a live dashboard.",
   icons: {
     icon: "/logo/planova_logo.png",
   },
@@ -32,12 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${nunito.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: noFoucScript }} />
-      </head>
-      <body className="min-h-full font-sans antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className="min-h-full font-sans antialiased">{children}</body>
     </html>
   );
 }

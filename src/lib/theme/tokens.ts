@@ -54,4 +54,16 @@ export const categoryColors = {
 
 export type CategoryColor = keyof typeof categoryColors;
 
-export const heroGradient = "linear-gradient(160deg, #8F7BD6, #7A6AB0)";
+export const hudColors = {
+  void: "#0A0E1A",
+  voidElevated: "#10162A",
+  voidBorder: "#1E2740",
+  glowAmber: "#E8A33D",
+  glowAmberSoft: "rgba(232, 163, 61, 0.35)",
+  glowPurple: "#7A6AB0",
+  glowPurpleSoft: "rgba(122, 106, 176, 0.35)",
+  glowPurpleText: "#A594D6",
+  inkHud: "#E9EDF7",
+  subHud: "#8792A6",
+  faintHud: "#4B5670",
+} as const;
