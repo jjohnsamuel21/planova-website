@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { familyMembers } from "@/lib/content/family";
+import { familyMembers, type FamilyMember } from "@/lib/content/family";
+import { VIEWPORT } from "@/lib/motion";
 
-const roleColor: Record<string, string> = {
+const roleColor: Record<FamilyMember["role"], string> = {
   Owner: "text-glow-amber bg-glow-amber/15",
-  Executor: "text-glow-purple bg-glow-purple/15",
+  Executor: "text-glow-purple-text bg-glow-purple/15",
   Observer: "text-sub-hud bg-void-border/40",
 };
 
@@ -41,7 +42,7 @@ export function Family() {
                 key={member.id}
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={VIEWPORT}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="flex items-center justify-between rounded-chip bg-void/60 px-4 py-3"
               >

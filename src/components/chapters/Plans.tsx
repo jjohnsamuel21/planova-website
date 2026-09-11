@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { plans } from "@/lib/content/plans";
+import { VIEWPORT } from "@/lib/motion";
 
 export function Plans() {
   return (
@@ -28,11 +29,14 @@ export function Plans() {
               key={plan.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10% 0px" }}
+              viewport={VIEWPORT}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="rounded-card-lg border border-void-border bg-void-elevated p-6 transition-colors hover:border-glow-amber/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-card-sm bg-void/60 text-2xl">
+              <div
+                aria-hidden="true"
+                className="flex h-12 w-12 items-center justify-center rounded-card-sm bg-void/60 text-2xl"
+              >
                 {plan.emoji}
               </div>
               <h3 className="mt-4 text-lg font-extrabold text-ink-hud">

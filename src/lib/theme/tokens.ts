@@ -62,6 +62,7 @@ export const hudColors = {
   glowAmberSoft: "rgba(232, 163, 61, 0.35)",
   glowPurple: "#7A6AB0",
   glowPurpleSoft: "rgba(122, 106, 176, 0.35)",
+  glowPurpleText: "#A594D6",
   inkHud: "#E9EDF7",
   subHud: "#8792A6",
   faintHud: "#4B5670",

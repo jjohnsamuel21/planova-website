@@ -5,14 +5,7 @@ import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { DonutRing } from "@/components/ui/DonutRing";
 import { CountUp } from "@/components/ui/CountUp";
 import { Reveal } from "@/components/ui/Reveal";
-
-const heroSegments = [
-  { label: "Medicine", value: 7, color: "#7A6AB0" },
-  { label: "Exercise", value: 2, color: "#3FA6A6" },
-  { label: "Food", value: 6, color: "#A4453F" },
-  { label: "Sleep", value: 1, color: "#5C9A7A" },
-  { label: "Baby", value: 6, color: "#C4874A" },
-];
+import { donutCategorySegments } from "@/lib/content/categories";
 
 export function Hero() {
   return (
@@ -59,16 +52,13 @@ export function Hero() {
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-sub-hud">
                 Today
               </span>
-              <span className="font-mono text-sm font-bold text-glow-amber">
-                <CountUp value={58} suffix="%" />
-              </span>
             </div>
             <div className="mt-6 flex justify-center">
               <DonutRing
-                segments={heroSegments}
+                segments={donutCategorySegments}
                 size={168}
                 strokeWidth={14}
-                centerValue="58%"
+                centerValue={<CountUp value={58} suffix="%" />}
                 centerLabel="TODAY"
               />
             </div>

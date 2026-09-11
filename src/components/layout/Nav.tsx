@@ -6,6 +6,8 @@ const links = [
   { href: "#plans", label: "Plans" },
   { href: "#thread-dial", label: "Thread & Dial" },
   { href: "#dashboard", label: "Dashboard" },
+  { href: "#logs", label: "Logs" },
+  { href: "#reminders", label: "Reminders" },
   { href: "#family", label: "Family" },
 ];
 

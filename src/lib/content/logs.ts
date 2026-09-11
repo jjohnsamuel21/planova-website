@@ -11,7 +11,7 @@ export const logActivities: LogEntry[] = [
   { id: "sleep", emoji: "😴", label: "Sleep", time: "11:00 AM", detail: "3 hr" },
   { id: "urine", emoji: "💧", label: "Urine", time: "1:30 AM", detail: "1st time" },
   { id: "poop", emoji: "🧷", label: "Poop", time: "2:00 AM", detail: "1st time" },
-  { id: "cry", emoji: "😢", label: "Crying", time: "3:00 AM", detail: "After feed" },
+  { id: "cry", emoji: "😢", label: "Cry", time: "3:00 AM", detail: "After feed" },
 ];
 
 export const quickChips = ["Feed", "Sleep", "Urine", "Poop", "Cry", "Play"];

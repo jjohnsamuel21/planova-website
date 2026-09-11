@@ -1,10 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { reminders } from "@/lib/content/reminders";
+import { VIEWPORT } from "@/lib/motion";
 
 export function Reminders() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="reminders" className="border-b border-void-border py-28">
       <div className="mx-auto max-w-6xl px-6">
@@ -28,13 +31,13 @@ export function Reminders() {
               key={reminder.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={VIEWPORT}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-wrap items-center justify-between gap-4 rounded-card-lg border border-void-border bg-void-elevated px-6 py-5"
             >
               <div>
                 <div className="flex items-center gap-3">
-                  <span className="rounded-chip bg-glow-purple/15 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-glow-purple">
+                  <span className="rounded-chip bg-glow-purple/15 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-glow-purple-text">
                     {reminder.tag}
                   </span>
                   <h3 className="text-base font-extrabold text-ink-hud">
@@ -46,8 +49,12 @@ export function Reminders() {
                 </p>
               </div>
               <motion.span
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                animate={shouldReduceMotion ? undefined : { opacity: [0.5, 1, 0.5] }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : { duration: 2.2, repeat: Infinity, ease: "easeInOut" }
+                }
                 className="rounded-chip bg-glow-amber/15 px-4 py-2 font-mono text-sm font-bold text-glow-amber"
               >
                 {reminder.date}

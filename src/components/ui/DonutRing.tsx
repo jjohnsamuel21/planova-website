@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+import { VIEWPORT } from "@/lib/motion";
 
 export type DonutSegment = {
   label: string;
@@ -19,7 +21,7 @@ export function DonutRing({
   segments: DonutSegment[];
   size?: number;
   strokeWidth?: number;
-  centerValue?: string;
+  centerValue?: ReactNode;
   centerLabel?: string;
   trackColor?: string;
 }) {
@@ -45,6 +47,7 @@ export function DonutRing({
         height={size}
         viewBox={`0 0 ${size} ${size}`}
         className="col-start-1 row-start-1"
+        aria-hidden="true"
       >
         <circle
           cx={size / 2}
@@ -73,7 +76,7 @@ export function DonutRing({
               strokeDasharray={`${arcLength} ${circumference - arcLength}`}
               initial={{ strokeDashoffset: -startOffset + arcLength }}
               whileInView={{ strokeDashoffset: -startOffset }}
-              viewport={{ once: true }}
+              viewport={VIEWPORT}
               transition={{ duration: 1, delay: index * 0.15, ease: "easeOut" }}
             />
           );

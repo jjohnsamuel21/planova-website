@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/chapters/Hero";
@@ -13,16 +14,18 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
-        <Hero />
-        <Plans />
-        <ThreadDial />
-        <Dashboard />
-        <Logs />
-        <Reminders />
-        <Family />
-        <FinalCta />
-      </main>
+      <MotionConfig reducedMotion="user">
+        <main>
+          <Hero />
+          <Plans />
+          <ThreadDial />
+          <Dashboard />
+          <Logs />
+          <Reminders />
+          <Family />
+          <FinalCta />
+        </main>
+      </MotionConfig>
       <Footer />
     </>
   );

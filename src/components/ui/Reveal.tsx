@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { VIEWPORT } from "@/lib/motion";
 
 export function Reveal({
   children,
@@ -16,7 +17,7 @@ export function Reveal({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-15% 0px" }}
+      viewport={VIEWPORT}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       className={className}
     >

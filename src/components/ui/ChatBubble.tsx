@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { VIEWPORT } from "@/lib/motion";
 
 export function ChatBubble({
   title,
@@ -15,7 +16,7 @@ export function ChatBubble({
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={VIEWPORT}
       transition={{ duration: 0.4, delay }}
       className="max-w-[85%] rounded-card rounded-bl-md bg-surface px-4 py-3 text-sm font-semibold text-ink shadow-card"
     >

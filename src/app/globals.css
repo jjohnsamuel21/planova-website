@@ -52,6 +52,7 @@
   --color-glow-amber-soft: rgba(232, 163, 61, 0.35);
   --color-glow-purple: #7a6ab0;
   --color-glow-purple-soft: rgba(122, 106, 176, 0.35);
+  --color-glow-purple-text: #a594d6;
   --color-ink-hud: #e9edf7;
   --color-sub-hud: #8792a6;
   --color-faint-hud: #4b5670;
@@ -91,6 +92,7 @@
   --color-glow-amber-soft: var(--color-glow-amber-soft);
   --color-glow-purple: var(--color-glow-purple);
   --color-glow-purple-soft: var(--color-glow-purple-soft);
+  --color-glow-purple-text: var(--color-glow-purple-text);
   --color-ink-hud: var(--color-ink-hud);
   --color-sub-hud: var(--color-sub-hud);
   --color-faint-hud: var(--color-faint-hud);
@@ -110,4 +112,14 @@
 body {
   background: var(--color-void);
   color: var(--color-ink-hud);
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-glow-amber);
+  outline-offset: 2px;
 }

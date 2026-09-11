@@ -4,13 +4,18 @@ import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { DonutRing } from "@/components/ui/DonutRing";
 import { CountUp } from "@/components/ui/CountUp";
+import { categoryColors } from "@/lib/theme/tokens";
+import { VIEWPORT } from "@/lib/motion";
 
+// Same category/value pairs as the shared donut segments in
+// src/lib/content/categories.ts, plus per-category completion `pct`
+// used by this chapter's progress bars.
 const categories = [
-  { label: "Medicine", value: 7, pct: 100, color: "#7A6AB0" },
-  { label: "Exercise", value: 2, pct: 60, color: "#3FA6A6" },
-  { label: "Food", value: 6, pct: 63, color: "#A4453F" },
-  { label: "Sleep", value: 1, pct: 90, color: "#5C9A7A" },
-  { label: "Baby", value: 6, pct: 68, color: "#C4874A" },
+  { label: "Medicine", value: 7, pct: 100, color: categoryColors.purple },
+  { label: "Exercise", value: 2, pct: 60, color: categoryColors.teal },
+  { label: "Food", value: 6, pct: 63, color: categoryColors.red },
+  { label: "Sleep", value: 1, pct: 90, color: categoryColors.green },
+  { label: "Baby", value: 6, pct: 68, color: categoryColors.orange },
 ];
 
 const kpis = [
@@ -62,7 +67,7 @@ export function Dashboard() {
                   key={kpi.label}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={VIEWPORT}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="rounded-card border border-void-border bg-void-elevated px-4 py-4 text-center"
                 >
@@ -82,7 +87,7 @@ export function Dashboard() {
                   key={category.label}
                   initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={VIEWPORT}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                 >
                   <div className="mb-1 flex items-center justify-between text-xs font-semibold text-sub-hud">
@@ -99,7 +104,7 @@ export function Dashboard() {
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${category.pct}%` }}
-                      viewport={{ once: true }}
+                      viewport={VIEWPORT}
                       transition={{ duration: 0.8, delay: 0.2 + index * 0.08 }}
                       className="h-full rounded-full"
                       style={{ backgroundColor: category.color }}
@@ -121,7 +126,7 @@ export function Dashboard() {
                 key={day.label}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={VIEWPORT}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="rounded-chip border border-void-border bg-void-elevated px-4 py-3"
               >

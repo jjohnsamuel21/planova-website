@@ -8,10 +8,34 @@ import { DialRow } from "@/components/ui/DialRow";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 
 const tasks = [
-  { id: "iron", title: "Morning — Iron Syrup, 1 cap", due: undefined as string | undefined, progress: 100 },
-  { id: "calcium", title: "Afternoon — Calcium, 1 tab", due: "1:00 PM", progress: 100 },
-  { id: "night", title: "Night — Iron Syrup, 1 cap", due: "9:00 PM", progress: 0 },
-  { id: "ointment", title: "Ointment (if needed)", due: undefined as string | undefined, progress: 40 },
+  {
+    id: "iron",
+    title: "Morning — Iron Syrup, 1 cap",
+    due: undefined as string | undefined,
+    progress: 100,
+    meta: "1 capsule with breakfast",
+  },
+  {
+    id: "calcium",
+    title: "Afternoon — Calcium, 1 tab",
+    due: "1:00 PM",
+    progress: 100,
+    meta: "1 tablet after lunch",
+  },
+  {
+    id: "night",
+    title: "Night — Iron Syrup, 1 cap",
+    due: "9:00 PM",
+    progress: 0,
+    meta: "1 capsule before bed",
+  },
+  {
+    id: "ointment",
+    title: "Ointment (if needed)",
+    due: undefined as string | undefined,
+    progress: 40,
+    meta: "Apply as needed",
+  },
 ];
 
 export function ThreadDial() {
@@ -55,7 +79,7 @@ export function ThreadDial() {
         </Reveal>
 
         <div className="mt-10 flex justify-center">
-          <PhoneFrame className="!min-h-0">
+          <PhoneFrame innerClassName="!min-h-0">
             <AnimatePresence mode="wait">
               {mode === "thread" ? (
                 <motion.div
@@ -72,7 +96,7 @@ export function ThreadDial() {
                       <ChatBubble
                         key={task.id}
                         title={task.title}
-                        meta={task.due ? `Due ${task.due}` : "Sitz bath — 2/3 times"}
+                        meta={task.due ? `Due ${task.due}` : task.meta}
                         delay={index * 0.1}
                       />
                     ))}

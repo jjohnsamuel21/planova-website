@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { VIEWPORT } from "@/lib/motion";
 
 export function CountUp({
   value,
@@ -15,7 +16,7 @@ export function CountUp({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const inView = useInView(ref, VIEWPORT);
   const motionValue = useMotionValue(0);
   const spring = useSpring(motionValue, { stiffness: 60, damping: 20 });
 

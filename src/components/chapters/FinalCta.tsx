@@ -1,31 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { DownloadButton } from "@/components/ui/DownloadButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { DonutRing } from "@/components/ui/DonutRing";
-
-const segments = [
-  { label: "Medicine", value: 7, color: "#7A6AB0" },
-  { label: "Exercise", value: 2, color: "#3FA6A6" },
-  { label: "Food", value: 6, color: "#A4453F" },
-  { label: "Sleep", value: 1, color: "#5C9A7A" },
-  { label: "Baby", value: 6, color: "#C4874A" },
-];
+import { donutCategorySegments } from "@/lib/content/categories";
 
 export function FinalCta() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="download" className="relative overflow-hidden py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(232,163,61,0.16),transparent_55%)]" />
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
         <Reveal className="flex justify-center">
           <motion.div
-            animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            animate={shouldReduceMotion ? undefined : { scale: [1, 1.03, 1] }}
+            transition={
+              shouldReduceMotion
+                ? undefined
+                : { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            }
             className="drop-shadow-[0_0_50px_rgba(232,163,61,0.35)]"
           >
             <DonutRing
-              segments={segments}
+              segments={donutCategorySegments}
               size={200}
               strokeWidth={14}
               centerValue="🌸"

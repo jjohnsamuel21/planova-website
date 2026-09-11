@@ -10,17 +10,20 @@ export function Logs() {
   const [entries, setEntries] = useState(logActivities);
 
   function addEntry(label: string) {
+    const activity = logActivities.find(
+      (entry) => entry.label.toLowerCase() === label.toLowerCase(),
+    );
     setEntries((prev) => [
-      ...prev,
       {
         id: `${label}-${prev.length}`,
-        emoji: "✨",
+        emoji: activity?.emoji ?? "✨",
         label,
         time: new Date().toLocaleTimeString([], {
           hour: "numeric",
           minute: "2-digit",
         }),
       },
+      ...prev,
     ]);
   }
 
@@ -70,7 +73,7 @@ export function Logs() {
                     className="flex items-center justify-between rounded-chip border border-void-border bg-void px-3 py-2"
                   >
                     <span className="flex items-center gap-2 text-sm font-semibold text-ink-hud">
-                      <span>{entry.emoji}</span>
+                      <span aria-hidden="true">{entry.emoji}</span>
                       {entry.label}
                     </span>
                     <span className="font-mono text-xs text-sub-hud">
