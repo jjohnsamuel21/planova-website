@@ -22,7 +22,7 @@ export function Hero() {
               medication, chores, recovery, anything — with a daily log
               everyone can see.
             </p>
-            <DownloadButton variant="onGradient" className="mt-8" />
+            <DownloadButton className="mt-8" />
           </div>
           <div className="flex justify-center md:justify-end">
             <HeroMockup />
